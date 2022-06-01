@@ -1,3 +1,4 @@
 this is a file A
 and it is the first file.
 I changed something.
+master changed
