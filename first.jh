@@ -1,0 +1,27 @@
+
+entity Project {
+	name String
+}
+
+entity Label {
+	label String minlength(3)
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Ticket {
+	tittle String required
+  	description String 
+    dueDate LocalDate
+    done Boolean
+}
+ entity User
+relationship  ManyToMany{
+	Ticket{label (label)} to Label{ticket}
+}
+
+relationship ManyToOne{
+ Ticket{project(name)} to Project,
+ Ticket{assignedTo(login)} to User{ticket}
+}
+paginate Ticket with pagination
